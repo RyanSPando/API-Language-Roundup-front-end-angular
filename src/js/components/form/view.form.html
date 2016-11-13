@@ -2,11 +2,11 @@
 <h1>{{formType}} Donut</h1>
 <form name="formie"
 novalidate
-ng-submit="validate.submit()">
+ng-submit="formCtrl.submit()">
   <div class="input-field" ng-class="{good: formie.name.$dirty && formie.name.$valid, error: formie.name.$dirty && formie.name.$invalid}">
     <label for="name">Donut name</label>
     <input
-      ng-model="validate.name"
+      ng-model="formCtrl.name"
       type="text" name="name"
       class="form-control" id="name"
       ng-class="{valid: formie.name.$dirty && formie.name.$valid, invalid: formie.name.$dirty && formie.name.$invalid}"
@@ -25,7 +25,7 @@ ng-submit="validate.submit()">
   <div class="input-field" ng-class="{good: formie.topping.$dirty && formie.topping.$valid, error: formie.topping.$dirty && formie.topping.$invalid}">
     <label for="topping">Topping</label>
     <input
-    ng-model="validate.topping"
+    ng-model="formCtrl.topping"
     ng-class="{valid: formie.topping.$dirty && formie.topping.$valid, invalid: formie.topping.$dirty && formie.topping.$invalid}"
     type="text"
     name="topping"
@@ -46,7 +46,7 @@ ng-submit="validate.submit()">
 
   <div class="input-field" ng-class="{good: formie.price.$dirty && formie.price.$valid, error: formie.price.$dirty && formie.price.$invalid}">
     <label for="price">Zip(5 Digits)</label>
-    <input ng-model="validate.price" name="price" type="number" class="form-control" id="price"  required>
+    <input ng-model="formCtrl.price" name="price" type="number" class="form-control" id="price"  required>
   </div>
 
   <div class="error" ng-show="formie.price.$dirty && formie.price.$invalid">
