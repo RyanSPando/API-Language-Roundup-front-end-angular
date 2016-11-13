@@ -4,23 +4,31 @@
     <meta charset="utf-8">
     <title>Untitled</title>
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <base href="/" target="/" />
   </head>
   <body ng-cloak>
     <!-- sample angular code -->
     <div class="container">
-      <div ng-controller="mainController as mainCtrl">
-        <p>{{ mainCtrl.greeting }}</p>
+      <div class="" ng-view>
+
       </div>
     </div>
     <!-- scripts -->
     <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
     <!-- main component -->
-    <script type="text/javascript" src="js/components/main/main.controller.js"></script>
+    <script type="text/javascript" src="./js/components/main/main.controller.js"></script>
+    <!-- ajax service -->
+    <script type="text/javascript" src="./js/components/ajax/ajax.service.js"></script>
+    <script src="https://use.fontawesome.com/535058757b.js"></script>
   </body>
 </html>

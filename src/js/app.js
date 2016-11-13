@@ -6,8 +6,12 @@
 
   angular
     .module('myApp', [
+      'ngRoute',
+      'ngAnimate',
+      'ui.materialize',
       'myApp.config',
-      'myApp.components.main'
+      'myApp.components.main',
+      'myApp.components.ajax'
     ]);
 
 })();

@@ -6,11 +6,21 @@
     .module('myApp.components.main', [])
     .controller('mainController', mainController);
 
-  mainController.$inject = ['$scope'];
+  mainController.$inject = ['$scope', 'ajax', ];
 
-  function mainController($scope) {
+  function mainController($scope, ajax) {
     /*jshint validthis: true */
-    this.greeting = 'Hello World!';
+    const vm = this;
+    vm.serverID = 0;
+    vm.donuts = [];
+
+    ajax.getDonuts(vm.serverID).then(donuts => {
+      vm.donuts = donuts.data;
+    });
+
+    vm.editDonut = function(id, name, topping, price) {
+      
+    };
   }
 
 })();

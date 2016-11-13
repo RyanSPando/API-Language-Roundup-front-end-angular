@@ -2,6 +2,10 @@
 
   'use strict';
 
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
   angular
     .module('myApp.config', [])
     .config(appConfig)
@@ -9,6 +13,21 @@
       $templateCache.removeAll();
     });
 
-  function appConfig() {}
+  function appConfig($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: '/js/components/main/view.home.html',
+        controller: 'mainController',
+        controllerAs: 'mainCtrl'
+      }).
+      when('/edit', {
+        templateUrl: '/js/components/form/form.home.html',
+        controller: 'formController',
+        controllerAs: 'formCtrl'
+      })
+      .otherwise('/');
+
+    $locationProvider.html5Mode(true);
+  }
 
 })();

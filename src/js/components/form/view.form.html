@@ -1,0 +1,38 @@
+<div ng-controller="mainController as mainCtrl">
+  <h3>API Language Roundup</h3>
+  <p>This front end, written in Angular, can be powered by API's written in several different languages.  You can switch the server for the backend by selecting from the drop down list.  The API's RESTful CRUD routes are for donuts.</p>
+</div>
+<h4>Donuts</h4>
+<div class="row">
+  <div class="col s4">
+    <a class="waves-effect waves-light btn">New Donut</i></a>
+  </div>
+  <div class="input-field col s4 offset-s4">
+   <select material-select>
+     <option value="" disabled selected>Choose your server</option>
+     <option value="0">Java</option>
+     <option value="1">Python</option>
+   </select>
+   <label>Backend Language Selection</label>
+  </div>
+</div>
+<table class="striped responsive-table">
+  <thead>
+    <tr>
+      <th data-field="id">Name</th>
+      <th data-field="name">Toppings</th>
+      <th data-field="price">Item Price</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="donut in mainCtrl.donuts">
+      <td>{{donut.name}}</td>
+      <td>{{donut.topping}}</td>
+      <td>${{donut.price.toFixed(2)}}</td>
+      <td><a class="waves-effect waves-light btn yellow accent-4"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+      <td><a class="waves-effect waves-light btn red accent 2"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+    </tr>
+  </tbody>
+</table>
