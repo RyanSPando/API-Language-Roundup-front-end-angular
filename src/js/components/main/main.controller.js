@@ -6,9 +6,9 @@
     .module('myApp.components.main', [])
     .controller('mainController', mainController);
 
-  mainController.$inject = ['$scope', 'ajax', ];
+  mainController.$inject = ['$scope', 'ajax', 'donut', '$location'];
 
-  function mainController($scope, ajax) {
+  function mainController($scope, ajax, donut, $location) {
     /*jshint validthis: true */
     const vm = this;
     vm.serverID = 0;
@@ -19,7 +19,12 @@
     });
 
     vm.editDonut = function(id, name, topping, price) {
-      
+      donut.setForm(id, name, topping, price);
+      $location.path('/edit');
+    };
+
+    vm.deleteDonut = function(id) {
+
     };
   }
 

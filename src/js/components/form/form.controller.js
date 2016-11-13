@@ -10,11 +10,10 @@
   function formController($scope, $location, ajax) {
     /*jshint validthis: true */
     const vm = this;
-    vm.id = -1;
+    vm.id = null;
     vm.name = null;
     vm.topping = null;
     vm.price = null;
-    
   }
 
 })();

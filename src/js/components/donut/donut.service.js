@@ -16,6 +16,20 @@
     vm.name = null;
     vm.topping = null;
     vm.price = null;
+
+    vm.resetForm = function() {
+      vm.id = null;
+      vm.name = null;
+      vm.topping = null;
+      vm.price = null;
+    };
+    
+    vm.setForm = function(id, name, topping, price) {
+      vm.id = id;
+      vm.name = name;
+      vm.topping = topping;
+      vm.price = price;
+    };
 }
 
 })();

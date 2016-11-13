@@ -11,7 +11,10 @@
       'ui.materialize',
       'myApp.config',
       'myApp.components.main',
-      'myApp.components.ajax'
+      'myApp.components.ajax',
+      'myApp.components.form',
+      'myApp.components.donut'
+
     ]);
 
 })();

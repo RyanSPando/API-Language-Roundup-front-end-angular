@@ -21,7 +21,7 @@
         controllerAs: 'mainCtrl'
       }).
       when('/edit', {
-        templateUrl: '/js/components/form/form.home.html',
+        templateUrl: '/js/components/form/view.form.html',
         controller: 'formController',
         controllerAs: 'formCtrl'
       })
