@@ -38,7 +38,7 @@
       <td>{{donut.topping}}</td>
       <td>${{donut.price.toFixed(2)}}</td>
       <td><a class="waves-effect waves-light btn yellow accent-4" ng-click="mainCtrl.editDonut(donut.id, donut.name, donut.topping, donut.price)"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-      <td><a class="waves-effect waves-light btn red accent 2"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+      <td><a class="waves-effect waves-light btn red accent 2" ng-click="mainCtrl.deleteDonut(donut.id)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
     </tr>
   </tbody>
 </table>

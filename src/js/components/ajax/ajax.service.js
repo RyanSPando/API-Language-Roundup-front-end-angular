@@ -38,11 +38,12 @@
         url: `${server[vm.index]}?${$.param(donut)}`,
       });
     };
-    
+
     vm.deleteDonut = function(id) {
+      console.log('Ajax Delete Donut');
       return $http({
         method: 'DELETE',
-        url: `${server[vm.index]}?${$.param(id)}`,
+        url: `${server[vm.index]}/${id}`,
       });
     };
     //set server

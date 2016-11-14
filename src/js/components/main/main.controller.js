@@ -30,13 +30,14 @@
     };
 
     vm.deleteDonut = function(id) {
+      console.log('MainController Delete');
       ajax.deleteDonut(id).then(value => vm.getList());
     };
 
     vm.createDonut = function() {
       $location.path('/new');
     };
-    
+
     vm.updateServer = function() {
       ajax.setIndex(vm.serverID);
     };
