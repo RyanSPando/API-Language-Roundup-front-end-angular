@@ -24,7 +24,11 @@
     };
 
     vm.deleteDonut = function(id) {
+      ajax.deleteDonut(id);
+    };
 
+    vm.updateServer = function() {
+      ajax.setIndex(vm.serverID);
     };
   }
 

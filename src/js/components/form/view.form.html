@@ -1,8 +1,8 @@
 
-<h1>{{formType}} Donut</h1>
+<h1>Donut</h1>
 <form name="formie"
 novalidate
-ng-submit="formCtrl.submit()">
+ng-submit="formCtrl.submit(formCtrl.serverID)">
   <div class="input-field" ng-class="{good: formie.name.$dirty && formie.name.$valid, error: formie.name.$dirty && formie.name.$invalid}">
     <label for="name">Donut name</label>
     <input

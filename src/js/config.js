@@ -24,6 +24,11 @@
         templateUrl: '/js/components/form/view.form.html',
         controller: 'formController',
         controllerAs: 'formCtrl'
+      }).
+      when('/new', {
+        templateUrl: '/js/components/form/view.form.html',
+        controller: 'formController',
+        controllerAs: 'formCtrl'
       })
       .otherwise('/');
 

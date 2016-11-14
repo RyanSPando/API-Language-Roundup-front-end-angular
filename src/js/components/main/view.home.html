@@ -8,11 +8,14 @@
     <a class="waves-effect waves-light btn">New Donut</i></a>
   </div>
   <div class="input-field col s4 offset-s4">
-   <select material-select>
-     <option value="" disabled selected>Choose your server</option>
-     <option value="0">Java</option>
-     <option value="1">Python</option>
-   </select>
+    <select
+    material-select
+    ng-model="mainCtrl.serverID"
+    ng-change="mainCtrl.updateServer()">
+      <option value="" disabled selected>Choose your server</option>
+      <option value="0">Java</option>
+      <option value="1">Python</option>
+    </select>
    <label>Backend Language Selection</label>
   </div>
 </div>

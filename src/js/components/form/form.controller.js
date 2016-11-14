@@ -16,18 +16,17 @@
     vm.price = donut.price;
 
     this.submit = () => {
-      const user = {
-        name: this.username,
-        password: this.password,
-        email: this.email,
-        zip: this.zip
+      const newDonut = {
+        id: vm.id,
+        name: vm.name,
+        topping: vm.topping,
+        price: vm.price
       };
-      this.users.push(user);
-      this.username = null;
-      this.email = null;
-      this.password = null;
-      this.zip = null;
+
+      ajax.editDonut(newDonut);
+      donut.resetForm();
       $scope.formie.$setPristine();
+      $location.path('/');
     };
   }
 
