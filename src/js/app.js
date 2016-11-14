@@ -14,7 +14,6 @@
       'myApp.components.ajax',
       'myApp.components.form',
       'myApp.components.donut'
-
     ]);
 
 })();

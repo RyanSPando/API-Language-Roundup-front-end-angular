@@ -1,60 +1,125 @@
+<div class="" ng-show="!formCtrl.post">
+  <h1>Edit Donut</h1>
+  <form name="formie"
+  novalidate
+  ng-submit="formCtrl.submit(formCtrl.serverID)">
+    <div class="input-field" ng-class="{good: formie.name.$dirty && formie.name.$valid, error: formie.name.$dirty && formie.name.$invalid}">
+      <label for="name">Donut name</label>
+      <input
+        ng-model="formCtrl.name"
+        type="text" name="name"
+        class="form-control" id="name"
+        ng-class="{valid: formie.name.$dirty && formie.name.$valid, invalid: formie.name.$dirty && formie.name.$invalid}"
+        ng-minlength=3
+        required/>
+    </div>
+    <div class="error" ng-show="formie.name.$dirty && formie.name.$invalid">
+      <small ng-show="formie.name.$error.required">
+        The donut name is required
+      </small>
+      <small ng-show="formie.name.$error.minlength">
+        The donut name must be greater than three characters
+      </small>
+    </div>
 
-<h1>Donut</h1>
-<form name="formie"
-novalidate
-ng-submit="formCtrl.submit(formCtrl.serverID)">
-  <div class="input-field" ng-class="{good: formie.name.$dirty && formie.name.$valid, error: formie.name.$dirty && formie.name.$invalid}">
-    <label for="name">Donut name</label>
-    <input
-      ng-model="formCtrl.name"
-      type="text" name="name"
-      class="form-control" id="name"
-      ng-class="{valid: formie.name.$dirty && formie.name.$valid, invalid: formie.name.$dirty && formie.name.$invalid}"
+    <div class="input-field" ng-class="{good: formie.topping.$dirty && formie.topping.$valid, error: formie.topping.$dirty && formie.topping.$invalid}">
+      <label for="topping">Topping</label>
+      <input
+      ng-model="formCtrl.topping"
+      ng-class="{valid: formie.topping.$dirty && formie.topping.$valid, invalid: formie.topping.$dirty && formie.topping.$invalid}"
+      type="text"
+      name="topping"
+      class="form-control"
+      id="topping"
       ng-minlength=3
-      required/>
-  </div>
-  <div class="error" ng-show="formie.name.$dirty && formie.name.$invalid">
-    <small ng-show="formie.name.$error.required">
-      The donut name is required
-    </small>
-    <small ng-show="formie.name.$error.minlength">
-      The donut name must be greater than three characters
-    </small>
-  </div>
+      required>
+    </div>
 
-  <div class="input-field" ng-class="{good: formie.topping.$dirty && formie.topping.$valid, error: formie.topping.$dirty && formie.topping.$invalid}">
-    <label for="topping">Topping</label>
-    <input
-    ng-model="formCtrl.topping"
-    ng-class="{valid: formie.topping.$dirty && formie.topping.$valid, invalid: formie.topping.$dirty && formie.topping.$invalid}"
-    type="text"
-    name="topping"
-    class="form-control"
-    id="topping"
-    ng-minlength=3
-    required>
-  </div>
+    <div class="error" ng-show="formie.topping.$dirty && formie.topping.$invalid">
+      <small ng-show="formie.topping.$error.required">
+        A topping is required
+      </small>
+      <small ng-show="formie.topping.$error.minlength">
+        A topping must be greater than three characters
+      </small>
+    </div>
 
-  <div class="error" ng-show="formie.topping.$dirty && formie.topping.$invalid">
-    <small ng-show="formie.topping.$error.required">
-      A topping is required
-    </small>
-    <small ng-show="formie.topping.$error.minlength">
-      A topping must be greater than three characters
-    </small>
-  </div>
+    <div class="input-field" ng-class="{good: formie.price.$dirty && formie.price.$valid, error: formie.price.$dirty && formie.price.$invalid}">
+      <label for="price">Zip(5 Digits)</label>
+      <input ng-model="formCtrl.price" name="price" type="number" class="form-control" id="price"  required>
+    </div>
 
-  <div class="input-field" ng-class="{good: formie.price.$dirty && formie.price.$valid, error: formie.price.$dirty && formie.price.$invalid}">
-    <label for="price">Zip(5 Digits)</label>
-    <input ng-model="formCtrl.price" name="price" type="number" class="form-control" id="price"  required>
-  </div>
+    <div class="error" ng-show="formie.price.$dirty && formie.price.$invalid">
+      <small ng-show="formie.price.$error.required">
+        A price is required
+      </small>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn waves-effect waves-light" ng-disabled="formie.$invalid">Submit</button>
+      <button  class="btn waves-effect waves-light red" ng-click="formCtrl.cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
 
-  <div class="error" ng-show="formie.price.$dirty && formie.price.$invalid">
-    <small ng-show="formie.price.$error.required">
-      A price is required
-    </small>
-  </div>
+<div class="" ng-show="formCtrl.post">
+  <h1>Create Donut</h1>
+  <form name="formie"
+  novalidate
+  ng-submit="formCtrl.submitNew()">
+    <div class="input-field" ng-class="{good: formie.name.$dirty && formie.name.$valid, error: formie.name.$dirty && formie.name.$invalid}">
+      <label for="name">Donut name</label>
+      <input
+        ng-model="formCtrl.name"
+        type="text" name="name"
+        class="form-control" id="name"
+        ng-class="{valid: formie.name.$dirty && formie.name.$valid, invalid: formie.name.$dirty && formie.name.$invalid}"
+        ng-minlength=3
+        required/>
+    </div>
+    <div class="error" ng-show="formie.name.$dirty && formie.name.$invalid">
+      <small ng-show="formie.name.$error.required">
+        The donut name is required
+      </small>
+      <small ng-show="formie.name.$error.minlength">
+        The donut name must be greater than three characters
+      </small>
+    </div>
 
-  <button type="submit" class="btn waves-effect waves-light" ng-disabled="formie.$invalid">Submit</button>
-</form>
+    <div class="input-field" ng-class="{good: formie.topping.$dirty && formie.topping.$valid, error: formie.topping.$dirty && formie.topping.$invalid}">
+      <label for="topping">Topping</label>
+      <input
+      ng-model="formCtrl.topping"
+      ng-class="{valid: formie.topping.$dirty && formie.topping.$valid, invalid: formie.topping.$dirty && formie.topping.$invalid}"
+      type="text"
+      name="topping"
+      class="form-control"
+      id="topping"
+      ng-minlength=3
+      required>
+    </div>
+
+    <div class="error" ng-show="formie.topping.$dirty && formie.topping.$invalid">
+      <small ng-show="formie.topping.$error.required">
+        A topping is required
+      </small>
+      <small ng-show="formie.topping.$error.minlength">
+        A topping must be greater than three characters
+      </small>
+    </div>
+
+    <div class="input-field" ng-class="{good: formie.price.$dirty && formie.price.$valid, error: formie.price.$dirty && formie.price.$invalid}">
+      <label for="price">Zip(5 Digits)</label>
+      <input ng-model="formCtrl.price" name="price" type="number" class="form-control" id="price"  required>
+    </div>
+
+    <div class="error" ng-show="formie.price.$dirty && formie.price.$invalid">
+      <small ng-show="formie.price.$error.required">
+        A price is required
+      </small>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn waves-effect waves-light" ng-disabled="formie.$invalid">Create</button>
+      <button  class="btn waves-effect waves-light red" ng-click="formCtrl.cancel()">Cancel</button>
+    </div>
+  </form>
 </div>

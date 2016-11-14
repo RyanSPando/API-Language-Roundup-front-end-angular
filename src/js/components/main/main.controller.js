@@ -18,15 +18,25 @@
       vm.donuts = donuts.data;
     });
 
+    vm.getList = function() {
+      ajax.getDonuts(vm.serverID).then(donuts => {
+        vm.donuts = donuts.data;
+      });
+    };
+
     vm.editDonut = function(id, name, topping, price) {
       donut.setForm(id, name, topping, price);
       $location.path('/edit');
     };
 
     vm.deleteDonut = function(id) {
-      ajax.deleteDonut(id);
+      ajax.deleteDonut(id).then(value => vm.getList());
     };
 
+    vm.createDonut = function() {
+      $location.path('/new');
+    };
+    
     vm.updateServer = function() {
       ajax.setIndex(vm.serverID);
     };

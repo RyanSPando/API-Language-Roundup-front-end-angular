@@ -5,9 +5,9 @@
 <h4>Donuts</h4>
 <div class="row">
   <div class="col s4">
-    <a class="waves-effect waves-light btn">New Donut</i></a>
+    <a class="waves-effect waves-light btn" ng-click="mainCtrl.createDonut()">New Donut</i></a>
   </div>
-  <div class="input-field col s4 offset-s4">
+  <div class="input-field col s4 offset-s2">
     <select
     material-select
     ng-model="mainCtrl.serverID"
@@ -17,6 +17,9 @@
       <option value="1">Python</option>
     </select>
    <label>Backend Language Selection</label>
+  </div>
+  <div class="">
+    <a class="waves-effect waves-light btn" ng-click="mainCtrl.getList()">Get List</i></a>
   </div>
 </div>
 <table class="striped responsive-table">
