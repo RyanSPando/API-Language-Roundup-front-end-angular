@@ -5,7 +5,10 @@
   "main": "gulpfile.js",
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "scripts":{
+    "start" : "gulp"
+  },
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^4.2.0",
     "gulp-jscs": "^4.0.0",
